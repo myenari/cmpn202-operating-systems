@@ -57,7 +57,15 @@ and compliance with the coursework requirement for remote administration.
 
 
 ## System Specifications (CLI Evidence)
-(To be added)
+System specifications will be collected once the Ubuntu Server virtual machine
+is deployed. Command-line tools such as `uname`, `free`, `df -h`, `ip addr`, and
+`lsb_release` will be used to document kernel version, memory usage, disk
+allocation, network configuration, and operating system details.
+
+All commands will be executed remotely via SSH from the workstation to ensure
+compliance with the coursework requirement for command-line-based system
+administration.
+
 
 ## Reflection
 (To be added)
