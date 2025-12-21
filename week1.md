@@ -28,7 +28,18 @@ for this operating systems coursework.
 
 
 ## Workstation Choice
-(To be added)
+A Windows host machine was selected as the workstation system for this coursework.
+The workstation is used to remotely administer the Linux server via SSH, providing
+a clear separation between the client and server environments.
+
+Using the Windows host as the workstation avoids unnecessary additional virtual
+machines while still meeting the coursework requirement for remote administration.
+SSH client tools are readily available on Windows, enabling secure command-line
+access to the server for configuration, monitoring, and testing tasks.
+
+This approach reflects real-world administration practices where servers are often
+managed remotely from a separate client system.
+
 
 ## Network Configuration
 (To be added)
