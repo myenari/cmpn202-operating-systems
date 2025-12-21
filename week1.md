@@ -5,7 +5,13 @@ This week focuses on planning the operating system deployment, selecting an appr
 server distribution, and documenting the system architecture and network configuration.
 
 ## System Architecture
-(To be added)
+
+The system follows a dual-system architecture. A Windows workstation is used as the
+administrative client, while a headless Ubuntu Server virtual machine runs the server
+operating system. All server administration is performed remotely via SSH.
+
+![System Architecture Diagram](architecture.png)
+
 
 ## Distribution Selection
 (To be added)
