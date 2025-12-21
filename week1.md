@@ -42,7 +42,19 @@ managed remotely from a separate client system.
 
 
 ## Network Configuration
-(To be added)
+The server and workstation systems will communicate using a VirtualBox virtual
+network configuration. A host-only or NAT-based network will be used to allow
+secure communication between the Windows workstation and the Ubuntu Server
+virtual machine while keeping the environment isolated from external networks.
+
+The Ubuntu Server will be assigned an internal IP address by the virtual network,
+and all administrative access will be performed remotely via SSH from the
+workstation. This configuration supports secure remote management and allows
+firewall rules to be applied later in the coursework to restrict access to the server.
+
+This planned network setup ensures controlled connectivity, security isolation,
+and compliance with the coursework requirement for remote administration.
+
 
 ## System Specifications (CLI Evidence)
 (To be added)
