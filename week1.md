@@ -68,4 +68,11 @@ administration.
 
 
 ## Reflection
-(To be added)
+In Week 1, I installed and configured Ubuntu Server 22.04 LTS using Oracle VirtualBox,
+which helped me understand how a server operating system is set up and managed without
+a graphical interface. I configured a user account, enabled SSH access, and updated the 
+system using apt commands, which improved my confidence with Linux command-line tools.
+
+This task highlighted the importance of security, system updates, and proper configuration
+when managing a server environment.
+
