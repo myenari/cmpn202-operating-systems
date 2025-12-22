@@ -1,59 +1,74 @@
-Week 3 – Application Selection for Performance Testing
-Introduction
+# Week 3 – Application Selection for Performance Testing
 
-This phase focuses on selecting representative applications to evaluate system performance under different workload types. The aim is to understand how the Ubuntu Server virtual machine behaves under CPU, memory, disk, and network load before conducting detailed performance testing in later phases.
+## Introduction
+This phase focuses on selecting representative applications to evaluate system performance under different workload types. The goal is to understand how the Ubuntu Server virtual machine behaves under CPU, memory, disk, and network load in preparation for later performance testing phases.
 
-Application Selection Matrix
+---
 
-CPU-Intensive Application
-Application: stress-ng
-Justification: Stress-ng is used to generate high CPU load to evaluate processor utilisation, scheduling behaviour, and system stability under intensive computation.
+## Application Selection Matrix
 
-Memory-Intensive Application
-Application: stress-ng (memory and VM tests)
-Justification: Memory stress tests allow observation of RAM usage, swap behaviour, and system responsiveness when memory resources are heavily utilised.
+### CPU-Intensive Application
+**Application:** stress-ng  
+**Workload Type:** CPU-intensive  
+**Justification:**  
+Stress-ng is used to generate high CPU load and stress processor scheduling and computation. It is suitable for observing CPU utilisation, load averages, and system stability under intensive processing.
 
-I/O-Intensive Application
-Application: fio
-Justification: Fio simulates disk read and write workloads to measure storage performance and identify potential I/O bottlenecks.
+---
 
-Network / Server Application
-Application: Apache Web Server
-Justification: Apache represents a real-world server workload involving network traffic and concurrent client requests, making it suitable for network and server performance evaluation.
+### Memory-Intensive Application
+**Application:** stress-ng (memory tests)  
+**Workload Type:** RAM-intensive  
+**Justification:**  
+Memory stress tests allocate and consume large amounts of RAM, allowing observation of memory usage, swap behaviour, and system responsiveness when memory resources are heavily utilised.
 
-Installation Documentation (SSH-Based)
+---
 
-All applications are installed remotely via SSH on the Ubuntu Server VM.
+### I/O-Intensive Application
+**Application:** fio  
+**Workload Type:** Disk I/O-intensive  
+**Justification:**  
+Fio simulates disk read and write workloads and is used to identify disk performance limits and potential I/O bottlenecks under sustained storage activity.
 
-Update package lists:
+---
 
+### Network / Server Application
+**Application:** Apache Web Server  
+**Workload Type:** Network-intensive / Server workload  
+**Justification:**  
+Apache represents a real-world server application handling network traffic and concurrent client requests, making it suitable for evaluating network throughput and server responsiveness.
+
+---
+
+## Installation Documentation (SSH-Based)
+
+All applications are installed remotely on the Ubuntu Server VM using SSH.
+
+```bash
 sudo apt update
-
-
-Install stress-ng:
-
-sudo apt install stress-ng -y
-
-
-Install fio:
-
-sudo apt install fio -y
-
-
-Install Apache web server:
-
-sudo apt install apache2 -y
+sudo apt install -y stress-ng fio apache2
 
 Expected Resource Profiles
 
-CPU Tests: High CPU utilisation with minimal disk and network activity.
+The expected resource usage for each application is outlined below. These profiles define anticipated system behaviour before testing begins.
 
-Memory Tests: Increased RAM usage with possible swap activity under heavy load.
+stress-ng (CPU): High CPU utilisation across available cores, increased load average, minimal disk activity.
 
-I/O Tests: High disk read/write activity with moderate CPU usage.
+stress-ng (Memory): High RAM consumption, potential swap usage if memory limits are exceeded, moderate CPU usage.
 
-Network Tests: Increased network throughput and concurrent connection handling.
+fio: High disk read/write activity, increased I/O wait times, moderate CPU usage.
+
+Apache Web Server: Moderate CPU usage, increased network throughput, stable memory usage under normal request loads.
 
 Monitoring Strategy
 
-System performance will be monitored using command-line tools such as top, htop, free, df, and iftop. These tools provide real-time insight into CPU usage, memory consumption, disk activity, and network traffic during workload execution.
+System performance will be monitored remotely via SSH using command-line tools during application execution.
+
+CPU & Load: top, htop, uptime
+
+Memory Usage: free -h, vmstat
+
+Disk I/O: iostat, df -h
+
+Network Activity: iftop, ss, Apache access logs
+
+These tools will allow real-time observation of system behaviour and provide baseline measurements for later analysis phases.
