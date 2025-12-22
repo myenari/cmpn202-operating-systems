@@ -1,17 +1,19 @@
-Performance Testing Plan:
-For performance and remote monitoring, I will use command-line monitoring tools such as top, htop, df -h, free -h,
-and uptime to observe CPU usage, memory consumption, disk utilisation, and system load while the server is running.
-Testing will be carried out during normal operation and while performing administrative tasks over SSH to assess system responsiveness
-and stability. Network performance will be observed using basic connectivity checks and interface statistics to ensure reliable remote access.
+# Week 2 – Security Planning and Testing Methodology
 
-Security Configuration Checklist:
-SSH access is secured by disabling root login, enforcing strong passwords, and limiting access to authorised users only.
-The firewall (UFW) is configured to allow SSH traffic while blocking all unnecessary ports. Mandatory access control is 
-enabled using AppArmor to restrict application permissions. Automatic security updates are enabled to ensure the system remains protected
-against known vulnerabilities.User privilege management follows the principle of least privilege, using sudo for administrative tasks.
-Network security is maintained by isolating the virtual machine and monitoring active connections.
+## Performance Testing Plan
 
-Threat Model and Mitigation:
-One identified threat is unauthorised SSH access, which is mitigated through SSH hardening and firewall rules. 
-Another threat is privilege escalation, reduced by strict user permissions and controlled sudo access. A further threat 
-is outdated software vulnerabilities, mitigated by enabling automatic updates and regular system patching.
+For performance and remote monitoring, command-line tools will be used to observe system behaviour while the Ubuntu Server is running. CPU usage, memory consumption, disk utilisation, and system uptime will be monitored using tools such as top, free -h, df -h, and uptime. Testing will be carried out during normal administrative tasks performed over SSH to assess responsiveness, stability, and overall system performance. This approach ensures the server remains reliable while being managed remotely.
+
+## Security Configuration Checklist
+
+- SSH access is secured by disabling root login and enforcing strong password authentication.
+- The firewall (UFW) is configured to allow only SSH traffic while blocking all other incoming connections.
+- Mandatory access controls are enforced using AppArmor to restrict application permissions.
+- Automatic security updates are enabled to ensure vulnerabilities are patched promptly.
+- User privilege management follows the principle of least privilege, with administrative tasks performed using sudo.
+- Network security is maintained by isolating the virtual machine and monitoring active connections.
+
+## Threat Model
+
+One identified threat is unauthorised SSH access, which is mitigated through SSH hardening, firewall rules, and restricted user privileges. Another threat is privilege escalation, reduced by enforcing sudo access controls and mandatory access policies. A further threat is unpatched vulnerabilities, which is mitigated by enabling automatic system updates and regular patching to maintain system security.
+
