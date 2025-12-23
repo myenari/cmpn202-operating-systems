@@ -25,7 +25,7 @@ To ensure secure remote access to the server by configuring the SSH service and 
 ```bash
 sudo systemctl restart ssh
 sudo systemctl status ssh
-\\\
+```
 
 
 ## Evidence
