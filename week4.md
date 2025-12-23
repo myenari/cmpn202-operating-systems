@@ -8,7 +8,7 @@ This week focuses on configuring foundational security controls on the Ubuntu Se
 
 ---
 
-## Step 1: Secure SSH Configuration (Key-Based Authentication)
+## Step 1: Secure SSH Service Configuration and Verification
 
 ### Objective
 To ensure secure remote access to the server by configuring the SSH service and verifying that it is running correctly. This step prepares the system for key-based authentication and secure administration.
@@ -43,3 +43,55 @@ This confirms that the server supports secure remote access via SSH.
 This step reinforced the importance of verifying SSH services when managing a server.
 Ensuring SSH is active allows secure administration while reducing exposure to insecure access methods.
 
+
+## Step 2: Key-Based SSH Authentication
+
+### Objective
+To improve SSH security by using key-based authentication instead of password-based login.
+
+### Action Performed
+- Generated an SSH key pair on the client machine.
+- Copied the public SSH key to the Ubuntu server.
+- Verified that SSH login using the key was successful.
+
+### Commands Used
+```bash
+ssh-keygen
+ssh-copy-id mabdi@<server-ip>
+ssh mabdi@<server-ip>
+```
+
+## Evidence
+Terminal output showing successful SSH login without being prompted for a password.
+
+## Outcome
+SSH access was successfully configured using key-based authentication. This confirms that the server now supports more secure authentication methods.
+
+## Reflection
+Using SSH keys significantly improves security by eliminating password-based logins, reducing the risk of brute-force attacks and unauthorized access.
+
+## Step 3: Firewall Configuration (UFW)
+
+### Objective
+To improve network security by restricting incoming traffic and allowing only essential services.
+
+### Action Performed
+- Enabled the Uncomplicated Firewall (UFW).
+- Allowed SSH traffic to ensure remote access remained available.
+- Verified firewall status to confirm correct configuration.
+
+### Commands Used
+```bash
+sudo ufw allow ssh
+sudo ufw enable
+sudo ufw status
+```
+
+## Evidence
+Terminal output showing the firewall is active and SSH traffic is allowed.
+
+## Outcome
+The firewall was successfully enabled and configured to allow SSH connections only. This reduces the system’s attack surface while maintaining secure remote administration.
+
+## Reflection
+Configuring a firewall is a fundamental security practice. Allowing only necessary services such as SSH helps protect the server from unauthorized network access.
