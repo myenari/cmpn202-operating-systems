@@ -47,10 +47,21 @@ Verifying AppArmor ensures that the system follows the principle of least privil
 
 ## Step 3: Access Control Verification
 
-### Commands Used
-### Evidence
-### Outcome
-### Reflection
+-Commands Used:
+```
+sudo aa-status
+sudo systemctl status ssh
+```
+
+-Evidence:
+
+<img width="800" height="600" alt="week7_step3_access_control_ssh" src="https://github.com/user-attachments/assets/e07440ab-882a-4118-809c-16deee2267f7" />
+
+-Outcome:
+Access control mechanisms are correctly enforced on the system. AppArmor is active and restricting application behaviour, while SSH access is controlled through a running and monitored service.
+
+-Reflection:
+Verifying access control confirms that only authorised services and users can interact with the system. Enforced AppArmor profiles and a properly running SSH service reduce the attack surface and improve overall system security.
 
 ## Step 4: Service Audit and Justification
 
