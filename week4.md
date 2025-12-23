@@ -34,6 +34,11 @@ The SSH service restarted successfully and is running in an active state. This c
 Evidence
 
 Terminal output showing Active: active (running) for the SSH service.
+Screenshot evidence captured to demonstrate successful SSH service status.
+
+Reflection
+
+This step reinforced the importance of securely managing remote access to a server. Verifying the SSH service status ensures that configuration changes are correctly applied and that the system is prepared for further security controls, such as disabling root login and restricting access via firewall rules.
 
 Screenshot evidence captured to demonstrate successful SSH service status.
 
