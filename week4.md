@@ -1,4 +1,7 @@
-# Week 4 – Initial System Configuration & Security Implementation
+# Week 4 – Secure Remote Access (SSH)
+
+## Aim
+The aim of this week is to configure and verify secure remote access to the Ubuntu Server using SSH. This ensures the system can be managed remotely in a secure and controlled manner.
 
 ## Introduction
 This week focuses on configuring foundational security controls on the Ubuntu Server virtual machine. The goal is to secure remote administration by enforcing secure SSH access, limiting privileges, and preparing the system for further security hardening in later phases.
