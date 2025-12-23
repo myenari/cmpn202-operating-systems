@@ -1,7 +1,10 @@
 # Week 7 – Security Audit and System Evaluation
 
 ## Aim
+The aim of this week is to conduct a security audit and system evaluation of the Ubuntu server. This includes assessing system security posture, verifying access controls, reviewing running services, and identifying potential risks and improvement areas.
+
 ## Introduction
+This phase focuses on evaluating the security configuration of the Ubuntu server following previous setup, hardening, and performance testing. Security auditing tools and access control checks are used to assess system integrity, validate enforced security mechanisms, and justify active services. The findings are analysed to provide an overall assessment of system security and risk.
 
 ## Step 1: System Security Audit (Lynis)
 
