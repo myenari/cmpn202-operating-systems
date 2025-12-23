@@ -27,10 +27,23 @@ Using Lynis helped identify security strengths and weaknesses in a structured an
 
 ## Step 2: Network Security Assessment (Nmap)
 
-### Commands Used
-### Evidence
-### Outcome
-### Reflection
+-Commands Used
+```
+sudo aa-status
+```
+
+-Evidence
+Terminal output confirms that the AppArmor security module is loaded and active. Multiple application profiles are shown as enforced, demonstrating that mandatory access control policies are applied on the system. A screenshot was captured showing AppArmor running successfully.
+
+<img width="800" height="600" alt="week7_step2_apparmor" src="https://github.com/user-attachments/assets/74019af5-2ddd-4cfa-b160-358cf1fcbc64" />
+
+
+-Outcome
+Access control mechanisms are enabled and functioning correctly. AppArmor is actively enforcing security profiles, helping to restrict application behaviour and reduce the potential impact of compromised processes.
+
+-Reflection
+Verifying AppArmor ensures that the system follows the principle of least privilege. Enforced access control profiles provide an additional security layer beyond traditional permissions, improving the overall security posture of the operating system.
+
 
 ## Step 3: Access Control Verification
 
