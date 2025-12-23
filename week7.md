@@ -65,9 +65,24 @@ Verifying access control confirms that only authorised services and users can in
 
 ## Step 4: Service Audit and Justification
 
-### Commands Used
-### Evidence
-### Outcome
-### Reflection
+-Commands Used:
+systemctl list-units --type=service --state=running
+
+-Evidence:
+The output lists all active system services currently running on the server. A screenshot was captured showing essential services such as SSH, networking, logging, and security-related services.
+
+
+<img width="800" height="600" alt="week7_step4_running_services" src="https://github.com/user-attachments/assets/e6bfad1e-2e03-4d89-96ac-ab8a5ffb4459" />
+
+
+-Outcome:
+Only necessary services were found to be running on the system. Core services such as SSH are required for remote administration, while background services support networking, logging, and system stability. No unnecessary or unexpected services were identified.
+
+-Reflection:
+Auditing running services helps minimise the system attack surface by ensuring that only required services are enabled. Regular service reviews reduce security risks and support best-practice system hardening.
 
 ## Step 5: Overall Risk Assessment and Evaluation
+
+The security audit and system evaluation identified that the Ubuntu server has a solid baseline security configuration. Core protections such as SSH access control, AppArmor enforcement, and limited running services reduce the system’s attack surface. The Lynis audit highlighted areas for improvement, indicating that while the system is reasonably hardened, additional configuration changes could further enhance security.
+
+Potential risks include misconfiguration of services, weak authentication settings, or unpatched vulnerabilities if updates are not maintained. These risks can be mitigated through regular security audits, timely system updates, stricter access controls, and continuous monitoring. Overall, the system demonstrates a good balance between usability and security, with clear opportunities for future hardening and optimisation.
