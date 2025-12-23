@@ -25,23 +25,18 @@ To ensure secure remote access to the server by configuring the SSH service and 
 ```bash
 sudo systemctl restart ssh
 sudo systemctl status ssh
+\\\
 
 
-Outcome
+## Evidence
+Terminal output showing the SSH service running in an active state.
+Screenshot evidence was captured to demonstrate successful SSH configuration.
 
-The SSH service restarted successfully and is running in an active state. This confirms that the OpenSSH server is operational and ready for secure remote access using SSH.
+## Outcome
+The SSH service restarted successfully and remained active.  
+This confirms that the server supports secure remote access via SSH.
 
-Evidence
+## Reflection
+This step reinforced the importance of verifying SSH services when managing a server.
+Ensuring SSH is active allows secure administration while reducing exposure to insecure access methods.
 
-Terminal output showing Active: active (running) for the SSH service.
-Screenshot evidence captured to demonstrate successful SSH service status.
-
-Reflection
-
-This step reinforced the importance of securely managing remote access to a server. Verifying the SSH service status ensures that configuration changes are correctly applied and that the system is prepared for further security controls, such as disabling root login and restricting access via firewall rules.
-
-Screenshot evidence captured to demonstrate successful SSH service status.
-
-Reflection
-
-This step reinforced the importance of securely managing remote access to a server. Verifying the SSH service status ensures that configuration changes are correctly applied and that the system is prepared for further security controls, such as disabling root login and restricting access via firewall rules.
