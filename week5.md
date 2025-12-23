@@ -10,20 +10,23 @@ In this week, additional security and monitoring features were configured to str
 
 ## Step 1: Access Control (AppArmor)
 
--Commands Used
+-Commands Used:
 ```bash
 sudo aa-status
 ```
 
--Evidence
+-Evidence:
+
 Terminal output confirmed that the AppArmor security module is loaded and active, with multiple profiles enforced. A screenshot was captured showing AppArmor running successfully on the Ubuntu server.
 
 <img width="800" height="600" alt="week5_step1_unattended_upgrades" src="https://github.com/user-attachments/assets/dbe12aa0-729f-4fd7-b9bb-ed2afcf9eda0" />
 
--Outcome
+-Outcome:
+
 AppArmor access control is enabled and operational on the system. This confirms that mandatory access control policies are actively restricting application behaviour to improve system security.
 
--Reflection
+-Reflection:
+
 Using AppArmor provides an additional layer of security by limiting what applications can access, even if they are compromised. Verifying that AppArmor is active ensures the system follows the principle of least privilege and is better protected against misuse or attacks.
 
 ## Step 2: Automatic Security Updates
@@ -34,16 +37,19 @@ sudo systemctl status unattended-upgrades
 sudo systemctl enable unattended-upgrades
 ```
 
-- Evidence
+- Evidence:
+
 The terminal output shows that the unattended-upgrades service is enabled and running. A screenshot was captured displaying the service status with active (running).
 
 <img width="800" height="600" alt="week5_step2_unattended_upgrades" src="https://github.com/user-attachments/assets/65b58522-b232-4898-9226-fd87021a58a1" />
 
 
-- Outcome
+- Outcome:
+
 Automatic security updates are successfully enabled on the Ubuntu server. This ensures that important security patches are installed automatically without requiring manual intervention.
 
-- Reflection
+- Reflection:
+
 Enabling unattended upgrades improves system security by reducing the risk of unpatched vulnerabilities. This approach is particularly important for servers, as it helps maintain a secure and stable system over time with minimal administrative effort.
 
 ## Step 3: Intrusion Detection (Fail2Ban)
@@ -56,15 +62,18 @@ sudo systemctl enable fail2ban
 sudo systemctl status fail2ban
 ```
 
-- Evidence
+- Evidence:
+
 Terminal output shows that the Fail2Ban service is active and running on the Ubuntu server. A screenshot was captured displaying the service status with `Active: active (running)`.
 
 <img width="800" height="600" alt="week5_step3_fail2ban_active" src="https://github.com/user-attachments/assets/5bc40e47-035f-4aab-bbae-bf30ab5ed623" />
 
-- Outcome
+- Outcome:
+
 Fail2Ban was successfully installed and configured on the Ubuntu server. The service is active and running, providing automated protection against brute-force attacks by monitoring login attempts and blocking malicious IP addresses.
 
-- Reflection
+- Reflection:
+
 Implementing Fail2Ban highlights the importance of proactive security measures on servers. By automatically detecting and blocking repeated failed login attempts, Fail2Ban significantly reduces the risk of brute-force attacks and strengthens overall system security with minimal administrative effort.
 
 ## Step 4: Security Baseline Verification Script
@@ -75,7 +84,8 @@ chmod +x security_baseline.sh
 ./security_baseline.sh
 ```
 
-- Evidence
+- Evidence:
+
 The terminal output shows the execution of the security baseline verification script.
 The script confirms that:
 
@@ -89,10 +99,12 @@ A screenshot was captured showing the successful execution of the script and the
 
 <img width="800" height="600" alt="week5_step4_security_-baseline" src="https://github.com/user-attachments/assets/8685d951-05a8-4740-ba2b-c0363860f720" />
 
-- Outcome
+- Outcome:
+
 The security baseline verification script ran successfully and confirmed that the key security services configured in previous steps are operational. This demonstrates that the server meets the required security baseline for secure remote administration and protection against common threats.
 
-- Reflection
+- Reflection:
+
 Running an automated security baseline script provides a reliable way to verify system security configuration consistently. It reduces human error, saves time during audits, and ensures that critical services such as SSH, firewall rules, and intrusion prevention remain active and correctly configured.
 
 ## Step 5: Remote Monitoring Script
@@ -103,13 +115,16 @@ chmod +x monitor-server.sh
 ./monitor-server.sh
 ```
 
-- Evidence
+- Evidence:
+
 The monitoring script was executed successfully on the Ubuntu server and produced output displaying current CPU usage, memory usage, and disk usage. A screenshot was captured showing the script output, confirming that the monitoring functionality works as intended.
 
 <img width="800" height="600" alt="week5_step5_monitoring_script_output" src="https://github.com/user-attachments/assets/2bf1bafd-ca89-4ba8-a730-58fbd6acc1f7" />
 
-- Outcome
+- Outcome:
+
 The remote monitoring script executed successfully and displayed real-time system performance metrics, including CPU usage, memory usage, and disk usage. This confirms that the script can effectively monitor key system resources on the server.
 
-- Reflection
+- Reflection:
+
 Creating a remote monitoring script demonstrates the importance of continuously observing system performance on a server. Being able to view CPU, memory, and disk usage remotely helps identify potential performance issues early and supports informed decision-making when managing system resources.
